@@ -11,10 +11,12 @@ class RiceMenu {
         print("4.새우볶음밥  ")
         println("5,000원")
         println("고기는 부담스럽고 밥은 먹고 싶고 그러면 새우와 함께 볶은 밥")
+        println("")
+        println("")
         var riceSelect : Int
         while (true) {
             try {
-                println("1.뒤로가기(메뉴판) 2.김치볶음밥 2.셀프 주먹밥 3.새우 볶음밥 0.종료 ")
+                println("1.뒤로가기(메뉴판) 2.김치볶음밥 2.셀프 주먹밥 3.새우 볶음밥 ")
                 print("원하시는 번호를 선택해 주세요    ")
                 riceSelect = readLine()!!.toInt()
             } catch (riceSelect:java.lang.NumberFormatException){
@@ -27,23 +29,23 @@ class RiceMenu {
                 }
 
                 2 -> {
-                    KimchiRice().abstractRice()
-                    return
+                    KimchiRice().abstractRice(name = "김치볶음밥", price = 5000)
+                    continue
                 }
 
                 3 -> {
-                    SelfRice().abstractRice()
-                    return
+                    SelfRice().abstractRice(name = "셀프 주먹밥", price = 3000)
+                    continue
                 }
 
                 4 -> {
-                    ShrimpRice().abstractRice()
-                    return
+                    ShrimpRice().abstractRice(name = "새우볶음밥", price = 5000)
+                    continue
+                }
+                else -> {
+                    println("다시 선택해 주세요")
                 }
 
-                0 -> {
-                    println("프로그램을 종료하겠습니다.")
-                }
             }
         }
     }

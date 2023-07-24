@@ -26,7 +26,7 @@ fun main(){
             }
 
             2-> {
-                //          menu2()
+                RiceMenu().riceMenu()
             }
             3-> {
                 //          menu3()
