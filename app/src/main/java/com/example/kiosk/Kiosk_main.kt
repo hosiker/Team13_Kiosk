@@ -1,4 +1,6 @@
-package com.example.kiosk
+package com.example.kiosk.Kiosk_mainKt
+
+import com.example.kiosk.RiceMenu
 
 fun main(){
     while(true) {
@@ -38,6 +40,7 @@ fun main(){
                 continue
             }
         }
+
     }
 
     //meue1() 탕류 : 김민우
