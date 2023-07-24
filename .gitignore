@@ -13,3 +13,10 @@
 .externalNativeBuild
 .cxx
 local.properties
+fileName.js
+/fileName.js
+node_module/
+folder/my.txt
+folder/**/fileName_2.txt
+*.txt
+!fileName.txt

@@ -3,24 +3,40 @@ package com.example.kiosk
 fun main(){
     while(true) {
         println("술집이름")
+        println("메뉴를 선택해 주세요.")
 
-        println("1.매장 내 식사")
-        println("2.포장하기")
-        println("3.종료")
+        println("0.종료")
+
+        println("1.탕류")
+        println("2.밥류")
+        println("3.마른안주")
+        println("4.주류")
 
         val num1: Int = readLine()!!.toInt()
 
-        if (num1 == 1) {
-            //      kioskmenu()
-        }
-        if (num1 == 2) {
-            //         kioskmenu()
-        }
-        if (num1 == 3) {
-            break
-        } else {
-            println("다시 선택해 주세요")
-            continue
+        when(num1) {
+            0-> {
+                break
+            }
+            1-> {
+                println("1.탕류 클래스를 불러옵니다.")
+                //        menu1()
+            }
+
+            2-> {
+                //          menu2()
+            }
+            3-> {
+                //          menu3()
+            }
+
+            4-> {
+                //          menu4()
+            }
+            else-> {
+                println("다시 선택해 주세요")
+                continue
+            }
         }
     }
 
