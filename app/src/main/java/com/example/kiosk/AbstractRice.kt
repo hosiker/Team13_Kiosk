@@ -1,5 +1,5 @@
 package com.example.kiosk
 
 abstract class AbstractRice {
-    abstract fun abstractRice()
+    abstract fun abstractRice(name: String, price: Int) : String
 }
