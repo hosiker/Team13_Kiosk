@@ -1,4 +1,6 @@
-package com.example.kiosk
+package com.example.kiosk.Kiosk_mainKt
+
+import com.example.kiosk.RiceMenu
 
 fun main(){
     while(true) {
@@ -22,6 +24,7 @@ fun main(){
             println("다시 선택해 주세요")
             continue
         }
+
     }
 
     //meue1() 탕류 : 김민우
