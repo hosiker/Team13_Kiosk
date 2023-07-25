@@ -2,9 +2,11 @@ package com.example.kiosk.Kiosk_mainKt
 
 import com.example.kiosk.RiceMenu
 
-fun main(){
-    while(true) {
-        println("술집이름")
+
+
+fun main() {
+    while (true) {
+        println("====술집이름=====")
         println("메뉴를 선택해 주세요.")
 
         println("0.종료")
@@ -16,26 +18,30 @@ fun main(){
 
         val num1: Int = readLine()!!.toInt()
 
-        when(num1) {
-            0-> {
+        when (num1) {
+            0 -> {
                 break
             }
-            1-> {
+
+            1 -> {
                 println("1.탕류 클래스를 불러옵니다.")
                 //        menu1()
             }
 
-            2-> {
+            2 -> {
                 //          menu2()
             }
-            3-> {
+
+            3 -> {
                 //          menu3()
             }
 
-            4-> {
-                //          menu4()
+            4 -> {
+                val res = Menu4().menu4()
+                if(res==0) break
             }
-            else-> {
+
+            else -> {
                 println("다시 선택해 주세요")
                 continue
             }
@@ -43,8 +49,8 @@ fun main(){
 
     }
 
-    //meue1() 탕류 : 김민우
-    //menu2() 밥류 : 허다겸
-    //menu3() 마른안주 : 이소연
-    //menu4() 주류 : 이호식
+//meue1() 탕류 : 김민우
+//menu2() 밥류 : 허다겸
+//menu3() 마른안주 : 이소연
+//menu4() 주류 : 이호식
 }
