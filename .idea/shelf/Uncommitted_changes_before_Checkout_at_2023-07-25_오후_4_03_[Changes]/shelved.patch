@@ -1,0 +1,76 @@
+Index: app/src/main/java/com/example/kiosk/Kiosk_main.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.kiosk\r\n\r\nfun main(){\r\n    while(true) {\r\n        println(\"술집이름\")\r\n        println(\"메뉴를 선택해 주세요.\")\r\n\r\n        println(\"0.종료\")\r\n\r\n        println(\"1.탕류\")\r\n        println(\"2.밥류\")\r\n        println(\"3.마른안주\")\r\n        println(\"4.주류\")\r\n\r\n        val num1: Int = readLine()!!.toInt()\r\n\r\n        when(num1) {\r\n            0-> {\r\n                break\r\n            }\r\n            1-> {\r\n                println(\"1.탕류 클래스를 불러옵니다.\")\r\n                //        menu1()\r\n            }\r\n\r\n            2-> {\r\n                //          menu2()\r\n            }\r\n            3-> {\r\n                //          menu3()\r\n            }\r\n\r\n            4-> {\r\n                //          menu4()\r\n            }\r\n            else-> {\r\n                println(\"다시 선택해 주세요\")\r\n                continue\r\n            }\r\n        }\r\n    }\r\n\r\n    //meue1() 탕류 : 김민우\r\n    //menu2() 밥류 : 허다겸\r\n    //menu3() 마른안주 : 이소연\r\n    //menu4() 주류 : 이호식\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/kiosk/Kiosk_main.kt b/app/src/main/java/com/example/kiosk/Kiosk_main.kt
+--- a/app/src/main/java/com/example/kiosk/Kiosk_main.kt	(revision 1ea6c3f7d81459ad47f7682b97d8e81d2265b34e)
++++ b/app/src/main/java/com/example/kiosk/Kiosk_main.kt	(date 1690268565943)
+@@ -1,8 +1,10 @@
+ package com.example.kiosk
+ 
+-fun main(){
+-    while(true) {
+-        println("술집이름")
++
++
++fun main() {
++    while (true) {
++        println("====술집이름=====")
+         println("메뉴를 선택해 주세요.")
+ 
+         println("0.종료")
+@@ -14,34 +16,38 @@
+ 
+         val num1: Int = readLine()!!.toInt()
+ 
+-        when(num1) {
+-            0-> {
++        when (num1) {
++            0 -> {
+                 break
+             }
+-            1-> {
++
++            1 -> {
+                 println("1.탕류 클래스를 불러옵니다.")
+                 //        menu1()
+             }
+ 
+-            2-> {
++            2 -> {
+                 //          menu2()
+             }
+-            3-> {
++
++            3 -> {
+                 //          menu3()
+             }
+ 
+-            4-> {
+-                //          menu4()
++            4 -> {
++                val res = Menu4().menu4()
++                if(res==0) break
+             }
+-            else-> {
++
++            else -> {
+                 println("다시 선택해 주세요")
+                 continue
+             }
+         }
+     }
+ 
+-    //meue1() 탕류 : 김민우
+-    //menu2() 밥류 : 허다겸
+-    //menu3() 마른안주 : 이소연
+-    //menu4() 주류 : 이호식
++//meue1() 탕류 : 김민우
++//menu2() 밥류 : 허다겸
++//menu3() 마른안주 : 이소연
++//menu4() 주류 : 이호식
+ }
+\ No newline at end of file
