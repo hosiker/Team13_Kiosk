@@ -1,6 +1,6 @@
 package com.example.kiosk
 
-data class CartItem(val name: String, val price: Double, val quantity: Int)  // 메뉴명, 가격, 수량
+data class CartItem(val name: String, val price: Int, val quantity: Int)  // 메뉴명, 가격, 수량
 
 class Cart {
     private val items = mutableListOf<CartItem>()
