@@ -1,4 +1,4 @@
-package com.example.kiosk
+package com.example.kiosk.Menu3
 
 data class DryMenu(val name: String, val price: Int, val description: String)
 

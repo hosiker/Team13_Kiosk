@@ -1,4 +1,4 @@
-package com.example.kiosk
+package com.example.kiosk.Menu1
 
 import java.lang.NumberFormatException
 

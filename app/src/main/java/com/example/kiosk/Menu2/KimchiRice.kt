@@ -1,4 +1,4 @@
-package com.example.kiosk
+package com.example.kiosk.Menu2
 
 class KimchiRice : AbstractRice() {
     override fun abstractRice(name: String, price: Int) :String{

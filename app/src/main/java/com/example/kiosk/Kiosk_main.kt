@@ -1,7 +1,10 @@
 package com.example.kiosk.Kiosk_mainKt
 
-import com.example.kiosk.RiceMenu
-import kotlinx.coroutines.selects.select
+import com.example.kiosk.Menu3.Cart
+import com.example.kiosk.Menu1.Menu1
+import com.example.kiosk.Menu3.Menu3
+import com.example.kiosk.Menu4.Menu4
+import com.example.kiosk.Menu2.RiceMenu
 
 fun main(){
     var selMeunList = mutableListOf<String>()
@@ -25,7 +28,7 @@ fun main(){
             1 -> {
                 println("1.탕류 클래스를 불러옵니다.")
 
-                //        menu1()
+                Menu1().tang()
             }
 
             2-> {
@@ -34,7 +37,7 @@ fun main(){
             }
 
             3 -> {
-                //          menu3()
+                Menu3(cart = Cart()).dry()
             }
 
             4 -> {

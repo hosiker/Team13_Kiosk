@@ -1,4 +1,4 @@
-package com.example.kiosk
+package com.example.kiosk.Menu2
 
 class RiceMenu {
     fun riceMenu(): MutableList<String> {
@@ -35,14 +35,14 @@ class RiceMenu {
                     var c = KimchiRice().abstractRice(name = "김치볶음밥", price = 5000)
                     selMenuList.add(c)//list에 반환값인 김치볶음밥이 왔다.
                     continue
-//                    break//밥메뉴에서 선택된 리스트 나오고 난 뒤에 키오스크에서도 선택된 값이 빈칸으로 나오고 다시 키오스크 재실행 된다.
+//                    break // 밥메뉴에서 선택된 리스트 나오고 난 뒤에 키오스크에서도 선택된 값이 빈칸으로 나오고 다시 키오스크 재실행 된다.
 
 //                    selMenuList.add("시험작")
-//                    println(selMenuList)//시험작이 나오고, 프린트로 시험작 나오고 다시 밥메뉴 선택으로 되돌아 온다.
+//                    println(selMenuList) // 시험작이 나오고, 프린트로 시험작 나오고 다시 밥메뉴 선택으로 되돌아 온다.
 
-//                    selMenuList.add(KimchiRice().abstractRice(name = "김치볶음밥", price = 5000))//두번 반복되어 질 뿐 변화 없음. 키오스크로 가져가지 못함.
+//                    selMenuList.add(KimchiRice().abstractRice(name = "김치볶음밥", price = 5000)) // 두번 반복되어 질 뿐 변화 없음. 키오스크로 가져가지 못함.
 
-//                    selMenuList.add(return) //아무변화 없음
+//                    selMenuList.add(return) // 아무변화 없음
                     //
                 }
 

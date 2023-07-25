@@ -1,4 +1,4 @@
-package com.example.kiosk
+package com.example.kiosk.Menu3
 
 data class CartItem(val name: String, val price: Int, val quantity: Int)  // 메뉴명, 가격, 수량
 

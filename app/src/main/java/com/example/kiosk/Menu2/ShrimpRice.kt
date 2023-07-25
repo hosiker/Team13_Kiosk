@@ -1,4 +1,4 @@
-package com.example.kiosk
+package com.example.kiosk.Menu2
 
 class ShrimpRice : AbstractRice() {
     override fun abstractRice(name: String, price: Int) : String{

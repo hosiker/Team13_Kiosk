@@ -1,4 +1,4 @@
-package com.example.kiosk
+package com.example.kiosk.Menu4
 
 open class Menu4 {
 
@@ -15,6 +15,7 @@ open class Menu4 {
             for(i in 1..size){
                 println("${i+1}. ${DrinkList().drinkname[i-1]}")
             }
+
 
             val num4: Int = readLine()!!.toInt()
 
