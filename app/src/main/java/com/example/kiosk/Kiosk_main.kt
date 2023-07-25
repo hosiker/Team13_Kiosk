@@ -8,9 +8,7 @@ fun main(){
     while(true) {
         println("술집이름")
         println("메뉴를 선택해 주세요.")
-
         println("0.종료")
-
         println("1.탕류")
         println("2.밥류")
         println("3.마른안주")
@@ -23,7 +21,8 @@ fun main(){
             0-> {
                 break //선택된메뉴 실행되지 않음.
             }
-            1-> {
+
+            1 -> {
                 println("1.탕류 클래스를 불러옵니다.")
                 //        menu1()
             }
@@ -31,14 +30,15 @@ fun main(){
             2-> {
                 var f = RiceMenu().riceMenu()
                 selMeunList.add(f.toString())
-
             }
-            3-> {
+
+            3 -> {
                 //          menu3()
             }
 
-            4-> {
-                //          menu4()
+            4 -> {
+                val res = Menu4().menu4()
+                if(res==0) break
             }
             5-> {
                 println("선택 메뉴 : ${selMeunList}입니다")
@@ -74,6 +74,7 @@ fun main(){
 
             }
             else-> {
+
                 println("다시 선택해 주세요")
                 continue
             }
@@ -81,8 +82,8 @@ fun main(){
 
     }
 
-    //meue1() 탕류 : 김민우
-    //menu2() 밥류 : 허다겸
-    //menu3() 마른안주 : 이소연
-    //menu4() 주류 : 이호식
+//meue1() 탕류 : 김민우
+//menu2() 밥류 : 허다겸
+//menu3() 마른안주 : 이소연
+//menu4() 주류 : 이호식
 }
