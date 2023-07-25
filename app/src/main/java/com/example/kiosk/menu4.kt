@@ -6,9 +6,15 @@ open class Menu4 {
         while (true) {
             println("0.종료")
             println("1.뒤로가기")
-            println("2.소주")
-            println("3.맥주")
-            println("4.음료수")
+            //println("2.소주")
+            //println("3.맥주")
+            //println("4.음료수")
+            DrinkList()
+            val size = DrinkList().drinkname.size
+
+            for(i in 1..size){
+                println("${i+1}. ${DrinkList().drinkname[i-1]}")
+            }
 
             val num4: Int = readLine()!!.toInt()
 
@@ -40,4 +46,9 @@ open class Menu4 {
         return 1
     }
 
+}
+
+open class DrinkList {
+    val drinkname = mutableListOf("소주", "맥주", "음료수")
+    val drinkprice = mutableListOf("4000원", "4000원", "2000원")
 }
