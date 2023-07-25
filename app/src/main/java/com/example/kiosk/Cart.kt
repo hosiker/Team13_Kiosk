@@ -29,7 +29,7 @@ class Cart {
             println("===Cart===")
             var totalCost = 0.0
             for ((index, item) in items.withIndex()) {
-                val subtotal = item.price * item.quantity  // 메뉴별로 가격 계산(여러개 선택할 수 있기 때문)
+                val subtotal = item.price * item.quantity  // 각 항목(메뉴)별로 가격 계산(여러개 선택할 수 있기 때문)
                 println("${index+1}. ${item.name} | ${item.quantity}개")
                 totalCost += subtotal  // 총액에 메뉴별 가격 더하기
             }
@@ -37,7 +37,7 @@ class Cart {
         }
 
         while (true) {
-            print("0. 뒤로가기\n- 입력: ")
+            print("\n0.뒤로가기\n- 입력: ")
             val input = readLine()!!
 
             if (input=="0") {
