@@ -6,4 +6,3 @@ import com.example.kiosk.Utils.MenuItem
 abstract class AbstractDry {
     abstract fun abstractDry(): MenuItem
 }
-

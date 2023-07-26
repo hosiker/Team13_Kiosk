@@ -5,6 +5,6 @@ import com.example.kiosk.Utils.MenuItems
 
 class Filefish(): AbstractDry() {
     override fun abstractDry(): MenuItem {
-        return MenuItems.filefish
+        return MenuItems.filefish  // object MenuItemise 정의된 cuttlefish 반환
     }
 }

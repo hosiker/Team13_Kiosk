@@ -8,8 +8,7 @@ class Cart() {
 
     // 카트에 추가하는 함수
     fun addToCart(name: String, price: Int, quantity: Int) {
-        val existingItem =
-            cartItems.find { it.first == name && it.second == price }  // 카트아이템 리스트에 이름과 가격이 일치하는 항목을 검색하는 코드
+        val existingItem = cartItems.find { it.first == name && it.second == price }  // 카트아이템 리스트에 이름과 가격이 일치하는 항목을 검색하는 코드
 
         if (existingItem != null) { // 항목이 이미 존재한다면
             val updatedItem = Triple(existingItem.first, existingItem.second, existingItem.third + quantity)  // 수량을 더해주고 updatedItem 저장

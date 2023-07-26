@@ -1,17 +1,15 @@
 package com.example.kiosk.Menu3
 
-import com.example.kiosk.Utils.Cart
-import com.example.kiosk.Utils.MenuItems
+import com.example.kiosk.Utils.Kiosk
 import com.example.kiosk.Utils.MenuItems.menuList
 import com.example.kiosk.Utils.QuantityUtils
 
-open class Menu3() {
-    fun dry() {
-        val menu3Items = MenuItems.menu3Items
-        val cart = Cart()
-        
+class MenuThree() {
+    fun dried() {
+        val menu3Items = Kiosk.menuItems.menu3Items
+        val cart = Kiosk.cart
+
         while (true) {
-            //println("\n[마른 안주]")
             println("[${menuList[2]}]")
             for ((index, menuItem) in menu3Items.withIndex()) {  // menu3Items 리스트 내 각 인덱스와 요소를 반복문으로 돌림
                 println("${index+1}. ${menuItem.name} | W ${menuItem.price} | ${menuItem.depict}")
