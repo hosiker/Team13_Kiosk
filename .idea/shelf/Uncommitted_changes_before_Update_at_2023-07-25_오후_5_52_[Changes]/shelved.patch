@@ -1,0 +1,38 @@
+Index: app/src/main/java/com/example/kiosk/Kiosk_main.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.kiosk.Kiosk_mainKt\r\n\r\nimport com.example.kiosk.RiceMenu\r\nimport kotlinx.coroutines.selects.select\r\n\r\nfun main(){\r\n    var selMeunList = mutableListOf<String>()\r\n    while(true) {\r\n        println(\"술집이름\")\r\n        println(\"메뉴를 선택해 주세요.\")\r\n        println(\"0.종료\")\r\n        println(\"1.탕류\")\r\n        println(\"2.밥류\")\r\n        println(\"3.마른안주\")\r\n        println(\"4.주류\")\r\n        println(\"5.메뉴 선택 완료\")\r\n\r\n        val num1: Int = readLine()!!.toInt()\r\n\r\n        when(num1) {\r\n            0-> {\r\n                break //선택된메뉴 실행되지 않음.\r\n            }\r\n\r\n            1 -> {\r\n                println(\"1.탕류 클래스를 불러옵니다.\")\r\n\r\n                //        menu1()\r\n            }\r\n\r\n            2-> {\r\n                var f = RiceMenu().riceMenu()\r\n                selMeunList.add(f.toString())\r\n            }\r\n\r\n            3 -> {\r\n                //          menu3()\r\n            }\r\n\r\n            4 -> {\r\n                val res = Menu4().menu4()\r\n                if(res==0) break\r\n            }\r\n            5-> {\r\n                println(\"선택 메뉴 : ${selMeunList}입니다\")\r\n                println(\"이 주문대로 주문 하시겠습니까?\")\r\n                var g : Int\r\n                while (true){\r\n                    try {\r\n                        println(\"1.네  주   문   합  니  다   \")\r\n                        println(\"2.아니요    조금 더 보겠습니다.\")\r\n                        println(\"3.처음으로 주문내역 삭제됩니다. \")\r\n                        print(\"원하시는 번호를 선택해 주세요    \")\r\n                        g = readLine()!!.toInt()\r\n                    } catch (riceSelect:java.lang.NumberFormatException){\r\n                        println(\"선택이 바르지 않습니다. 정확한 숫자만 입력 해 주세요\")\r\n                        continue//밑 g 인자가 받아진다 그리고 계속 try 반복하고 break 적용시 밑에 when 문의 break와 continue 가 바뀌어 진다.\r\n                    }\r\n                    when(g){\r\n                        1 -> {\r\n                            //총가격 알려주는 기능 추가해서 완료되었습니다 하기// 빈공간하면 계속 5번반복함\r\n                        }\r\n                        2 -> {\r\n                            break// 키오스크메뉴로 이동 //키오스크메뉴에서 다시 종료(0)을 눌러야 완전히 종료가 되어진다. 어떻게 해야 여기서 종료를 할수 있을까\r\n                        }\r\n                        3 -> {\r\n                            continue//\r\n                            //새로 시작하는 방법 찾기(그냥 종료하는 것도 방법이다.\r\n                        }\r\n                        else -> {\r\n                            println(\"정확한 숫자를 입력 해주세요\")\r\n                        }\r\n                    }\r\n                }\r\n\r\n            }\r\n            else-> {\r\n\r\n                println(\"다시 선택해 주세요\")\r\n                continue\r\n            }\r\n        }\r\n\r\n    }\r\n\r\n//meue1() 탕류 : 김민우\r\n//menu2() 밥류 : 허다겸\r\n//menu3() 마른안주 : 이소연\r\n//menu4() 주류 : 이호식\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/kiosk/Kiosk_main.kt b/app/src/main/java/com/example/kiosk/Kiosk_main.kt
+--- a/app/src/main/java/com/example/kiosk/Kiosk_main.kt	(revision 3223e9a7017eccbcc58afad1c730e1ec6bf32e47)
++++ b/app/src/main/java/com/example/kiosk/Kiosk_main.kt	(date 1690272159312)
+@@ -1,5 +1,9 @@
+ package com.example.kiosk.Kiosk_mainKt
+ 
++import com.example.kiosk.Cart
++import com.example.kiosk.Menu1
++import com.example.kiosk.Menu3
++import com.example.kiosk.Menu4
+ import com.example.kiosk.RiceMenu
+ import kotlinx.coroutines.selects.select
+ 
+@@ -25,7 +29,7 @@
+             1 -> {
+                 println("1.탕류 클래스를 불러옵니다.")
+ 
+-                //        menu1()
++                Menu1().tang()
+             }
+ 
+             2-> {
+@@ -34,7 +38,7 @@
+             }
+ 
+             3 -> {
+-                //          menu3()
++                Menu3(cart = Cart()).dry()
+             }
+ 
+             4 -> {
