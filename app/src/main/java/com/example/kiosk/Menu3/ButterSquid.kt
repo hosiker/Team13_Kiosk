@@ -1,10 +1,12 @@
 package com.example.kiosk.Menu3
 
 import com.example.kiosk.Utils.MenuItem
-import com.example.kiosk.Utils.MenuItems
 
 class ButterSquid: AbstractDry() {
-    override fun abstractDry(): MenuItem {
-        return MenuItems.butterSquid  // object MenuItems에서 정의된 butterSquid를 반환
+    override fun info(): MenuItem {
+        val name = "버터오징어구이"
+        val price = 9000
+        val depict = "진~한 버터에 한바탕 뒹군 오징어"
+        return MenuItem(name, price, depict)
     }
 }
