@@ -1,7 +1,10 @@
 package com.example.kiosk.Menu3
 
+import com.example.kiosk.Utils.MenuItem
+import com.example.kiosk.Utils.MenuItems
+
 class Pollack: AbstractDry() {
-    override fun abstractDry(name: String, price: Int, depict: String): MenuItem {
-        return MenuItem(name, price, depict)
+    override fun abstractDry(): MenuItem {
+        return MenuItems.pollack
     }
 }
