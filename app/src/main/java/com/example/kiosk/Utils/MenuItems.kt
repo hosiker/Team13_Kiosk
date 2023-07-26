@@ -1,4 +1,4 @@
-package com.example.kiosk.Menu3
+package com.example.kiosk.Utils
 
 // 메뉴의 데이터베이스 역할
 object MenuItems {
