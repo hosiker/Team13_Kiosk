@@ -1,7 +1,11 @@
 package com.example.kiosk
 
 import com.example.kiosk.Menu1.Menu1
+import com.example.kiosk.Menu2.AbstractRice
+import com.example.kiosk.Menu2.KimchiRice
 import com.example.kiosk.Menu2.RiceMenu
+import com.example.kiosk.Menu2.SelfRice
+import com.example.kiosk.Menu2.ShrimpRice
 
 import com.example.kiosk.Menu3.MenuThree
 import com.example.kiosk.Menu3.AbstractDry
@@ -10,18 +14,13 @@ import com.example.kiosk.Menu3.Calamari
 import com.example.kiosk.Menu3.Filefish
 import com.example.kiosk.Menu3.Pollack
 
-import com.example.kiosk.Menu4.AbstractDrink
-import com.example.kiosk.Menu4.Beer
-import com.example.kiosk.Menu4.Highball
-import com.example.kiosk.Menu4.MenuFour
-import com.example.kiosk.Menu4.Soju
 import com.example.kiosk.Utils.Kiosk.cart
 
 fun main(){
     // val menu1List: List<> = listOf()
-    // val menu2List: List<AbstractRice> = listOf(KimchiRice(), SelfRice(), ShrimpRice())
+    val menu2List: List<AbstractRice> = listOf(KimchiRice(), SelfRice(), ShrimpRice())
     val menu3List: List<AbstractDry> = listOf(ButterSquid(), Calamari(), Filefish(), Pollack())
-    val menu4List: List<AbstractDrink> = listOf(Soju(), Beer(), Highball())
+    //val menu4List: List<AbstractDrink> = listOf(Soju(), Beer(), Highball())
     while(true) {
         println("술집이름")
         println("메뉴를 선택해 주세요.")
@@ -32,6 +31,7 @@ fun main(){
         println("5.카트")
         println("0.종료")
 
+        print("입력: ")
         val num1: Int = readLine()!!.toInt()
 
         when(num1) {
@@ -46,8 +46,7 @@ fun main(){
             }
 
             2-> {
-                var f = RiceMenu().riceMenu()
-                //selMeunList.add(f.toString())
+                RiceMenu().riceMenu1(menu2List)
             }
 
             3 -> {
@@ -55,7 +54,7 @@ fun main(){
             }
 
             4 -> {
-                MenuFour().drink(menu4List)
+                //MenuFour().drink(menu4List)
             }
             5-> {
                 cart.viewCart()  // 카드에 담긴 항목을 보여줌

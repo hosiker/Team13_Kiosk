@@ -1,3 +1,4 @@
+/*
 package com.example.kiosk.Menu4
 
 import com.example.kiosk.Utils.Kiosk
@@ -56,4 +57,4 @@ open class MenuFour() {
             }
         }
     }
-}
+}*/

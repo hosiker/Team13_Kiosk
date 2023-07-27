@@ -1,6 +1,7 @@
 package com.example.kiosk.Menu2
 
+import com.example.kiosk.Utils.MenuItem
+
 abstract class AbstractRice {
-    abstract fun abstractRice() : MenuIteam
+    abstract fun info() : MenuItem
 }
-data class MenuIteam(val name: String, val price : Int, val deict : String)

@@ -1,13 +1,12 @@
 package com.example.kiosk.Menu3
 
-import com.example.kiosk.Utils.Kiosk
+import com.example.kiosk.Utils.Kiosk.cart
 import com.example.kiosk.Utils.QuantityUtils
 
 class MenuThree() {
     //val menu3List: List<AbstractDry> = listOf(ButterSquid(), Calamari(), Filefish(), Pollack())
 
     fun dried(menu3List: List<AbstractDry>) {
-        val cart = Kiosk.cart
 
         while (true) {
             println("[ 마른 안주 ]")

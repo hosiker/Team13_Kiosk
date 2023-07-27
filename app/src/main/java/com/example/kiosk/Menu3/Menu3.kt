@@ -1,3 +1,4 @@
+/*
 package com.example.kiosk.Menu3
 
 import com.example.kiosk.Utils.Cart
@@ -57,4 +58,4 @@ open class Menu3() {
             }
         }
     }
-}
+}*/

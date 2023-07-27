@@ -1,3 +1,4 @@
+/*
 package com.example.kiosk.Kiosk_mainKt
 
 import com.example.kiosk.Menu3.Cart
@@ -94,3 +95,4 @@ fun main(){
 //menu3() 마른안주 : 이소연
 //menu4() 주류 : 이호식
 }
+*/
