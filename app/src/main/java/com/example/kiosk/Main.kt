@@ -18,6 +18,7 @@ import com.example.kiosk.Utils.Kiosk.cart
 
 fun main(){
     // val menu1List: List<> = listOf()
+    val menu1List: List<Menu1.abstractTang1> = listOf(Menu1.omok(), Menu1.nagasaki(), Menu1.kimchiodong(), Menu1.hamul())
     val menu2List: List<AbstractRice> = listOf(KimchiRice(), SelfRice(), ShrimpRice())
     val menu3List: List<AbstractDry> = listOf(ButterSquid(), Calamari(), Filefish(), Pollack())
     //val menu4List: List<AbstractDrink> = listOf(Soju(), Beer(), Highball())
@@ -42,7 +43,7 @@ fun main(){
             1 -> {
                 println("1.탕류 클래스를 불러옵니다.")
 
-                Menu1().tang()
+                Menu1().tang(menu1List)
             }
 
             2-> {
