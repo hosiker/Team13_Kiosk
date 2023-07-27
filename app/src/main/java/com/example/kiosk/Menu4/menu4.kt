@@ -8,15 +8,12 @@ open class Menu4 {
 
     fun menu4(menu4List: kotlin.collections.List<AbstractDrink>) {
         while (true) {
-            //println("0.종료")
             println("=======주류 메뉴판=======")
             DrinkList().detailList()
             println("5. 카트보기")
             println("0. 뒤로가기")
 
             println("=======================")
-
-            //val listsize = DrinkList().drinkname.size
 
             print("입력: ")
             val inputQuantity = readLine()?.toIntOrNull()
@@ -31,22 +28,18 @@ open class Menu4 {
                         println("${DrinkList().drinkname[inputQuantity - 1]} ${quantity}개를 카트에 담았습니다.\n")
                     }
                     5 -> {
-                        Kiosk.cart.viewCart()  // 카드에 담긴 항목을 보여줌
+                        Kiosk.cart.viewCart()
                         continue
                     }
                     0 -> {
                         println("메인메뉴로 돌아갑니다.\n")
-                        return  // 0 입력 시 메인메뉴로 뒤로가기
+                        return
                     }
                     else -> {
                         println("보기에 없는 번호입니다 다시 선택해 주세요")
 
                     }
                 }
-
-
-                //else if (num4 == 0) break
-
             }else {
                 println("※ 숫자를 입력해주세요.\n")
             }
@@ -56,11 +49,6 @@ open class Menu4 {
     }
 
 }
-
-//open class DrinkList {
-//    val drinkname = mutableListOf("소주", "맥주", "음료수")
-//    val drinkprice = mutableListOf("4000원", "4000원", "2000원")
-//}
 
 abstract class AbstractDrink {
     abstract fun info(): MenuItem
@@ -110,9 +98,6 @@ open class DrinkList() : List<Any?>() {
 
         for (i in 1..size) {
             println("${i}. ${DrinkList().drinkname[i - 1]} | ${DrinkList().drinkprice[i - 1]} | ${DrinkList().drinkdescription[i - 1]}")
-            //println("2.소주")
-            //println("3.맥주")
-            //println("4.음료수")
         }
 
 
