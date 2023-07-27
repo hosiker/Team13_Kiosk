@@ -10,9 +10,3 @@ class Pollack: AbstractDry() {
         return MenuItem(name, price, depict)
     }
 }
-/*
-class Pollack: AbstractDry() {
-    override fun abstractDry(): MenuItem {
-        return MenuItems.pollack  // object MenuItemise 정의된 pollack 반환
-    }
-}*/
