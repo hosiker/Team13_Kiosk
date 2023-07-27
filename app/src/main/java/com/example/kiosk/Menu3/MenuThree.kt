@@ -16,7 +16,6 @@ class MenuThree() {
                 println("${index+1}. ${menuInfo.name} | W ${menuInfo.price} | ${menuInfo.depict}")
             }
             println("5. 카트보기")
-            println("6. 총 가격 보기")
             println("0. 뒤로가기")
 
             print("입력: ")
@@ -27,11 +26,12 @@ class MenuThree() {
                     in 1..menu3List.size -> { // 1~menu3item 리스트 크기동안 실행
                         val selectedItem = menu3List[inputQuantity.toInt()-1]  // 선택한 메뉴의 인덱스에 해당하는 메뉴를 가져옴
                         val itemInfo = selectedItem.info()
-                        println("${inputQuantity}. ${itemInfo.name}을(를) 선택하셨습니다.")
+                        // println("${inputQuantity}. ${itemInfo.name}을(를) 선택하셨습니다.")
+                        println("\n${itemInfo.name}을(를) 선택하셨습니다.")
 
                         val quantity = QuantityUtils.askForQuantity()
                         cart.addToCart(itemInfo.name, itemInfo.price, quantity)
-                        println("${itemInfo.name} ${quantity}개가 카트에 담겼습니다.")
+                        println("${itemInfo.name} ${quantity}개를 카트에 담았습니다.\n")
                     }
 
                     5 -> {
@@ -39,9 +39,9 @@ class MenuThree() {
                         continue
                     }
 
-                    6 -> {
+                    /*6 -> {
                         cart.total()  // 총합을 선택하면 가격을 말해주고 계산하는걸로 넘어가야 하는걸까?
-                    }
+                    }*/
 
                     0 -> {
                         println("메인메뉴로 돌아갑니다.\n")
