@@ -6,42 +6,43 @@ import java.lang.NumberFormatException
 
 
 fun main(){
-    val menuList = mutableListOf(
-        Menu2("모듬어묵짬뽕 |", 10000, "| 소박한 모듬어묵짬뽕"),
-        Menu2("나가사끼짬뽕 |", 20000, "| 담백한 나가사끼짬뽕"),
-        Menu2("해물얼큰짬뽕 |", 20000, "| 시원한 해물얼큰짬뽕"),
-        Menu2("김치우동짬뽕 |", 15000, "| 칼칼한 김치우동짬뽕")
-    )
 
-        for(menu in menuList){
-        println("${menu.name} ${menu.price} ${menu.explain}")
-    }
-
-    //menuList.add(Menu2("빨간우동전골 |", 18000, "| 존맛존맛존맛"))
-    //menuList.removeAt(2)
-
-    //println("----- 변경 후 메뉴 리스트 -----")
-    //for (menu in menuList) {
-    //    println("${menu.name} ${menu.price} ${menu.explain}")
-    //}
+    Menu3().printMenuList()
 
     Menu1().tang()
+
 }
 
-data class Menu2(val name: String, val price: Int, val explain: String)
+class Menu3 {
+    val menuList = mutableListOf(
+        Menu2("모듬어묵짬뽕 |", "₩ 10000", "| 소박한 모듬어묵짬뽕"),
+        Menu2("나가사끼짬뽕 |", "₩ 20000", "| 담백한 나가사끼짬뽕"),
+        Menu2("해물얼큰짬뽕 |", "₩ 20000", "| 시원한 해물얼큰짬뽕"),
+        Menu2("김치우동짬뽕 |", "₩ 15000", "| 칼칼한 김치우동짬뽕")
+    )
+    fun printMenuList() {
+        //println("1.탕류 클래스를 불러옵니다.")
+        for (menu in menuList) {
+            println("${menu.name} ${menu.price} ${menu.explain}")
+        }
+    }
+}
+
+data class Menu2(val name: String, val price: String, val explain: String)
+
 
 open class Menu1 {
 
     open fun tang() {
             var a = arrayOf("모듬어묵짬뽕", "나가사끼짬뽕", "해물얼큰짬뽕", "김치우동짬뽕")
         while (true) {
-            println("1. 뒤로가기")
             println("")
             println("[탕 메뉴]")
-            println("2. ${a[0]}")
-            println("3. ${a[1]}")
-            println("4. ${a[2]}")
-            println("5. ${a[3]}")
+            println("1. ${a[0]}")
+            println("2. ${a[1]}")
+            println("3. ${a[2]}")
+            println("4. ${a[3]}")
+            println("0. 뒤로가기")
 
             var sel1: Int?
 
@@ -53,7 +54,7 @@ open class Menu1 {
                     sel1 = input.toInt()
                     when (sel1) {
 
-                        2 -> {
+                        1 -> {
 
                             info(omok()).info1()
                             println("")
@@ -70,7 +71,7 @@ open class Menu1 {
                             continue
                         }
 
-                        3 -> {
+                        2 -> {
 
                             info(nagasaki()).info1()
                             println("")
@@ -82,7 +83,7 @@ open class Menu1 {
                             continue
                         }
 
-                        4 -> {
+                        3 -> {
 
                             info(hamul()).info1()
                             println("")
@@ -94,7 +95,7 @@ open class Menu1 {
                             continue
                         }
 
-                        5 -> {
+                        4 -> {
 
                             info(kimchiodong()).info1()
                             println("")
@@ -106,14 +107,14 @@ open class Menu1 {
                         }
 
                         0 -> {
-                            println("프로그램 종료")
-                            break
-                        }
-
-                        1 -> {
                             println("뒤로가기 종료")
                             return
                         }
+
+                        //5 -> {
+                        //    println("프로그램 종료")
+                        //    break
+                        //}
 
                         else -> {
                             println("입력이 없습니다. 숫자를 입력해주세요. ")
@@ -183,7 +184,7 @@ open class Menu1 {
             val price = 10000
             val explain = "소박한 모듬어묵짬뽕"
 
-            println("${name}이 선택되었습니다.| 10000 | 소박한 묵짬뽕")
+            println("${name}이 선택되었습니다.| ₩ 10000 | 소박한 묵짬뽕")
             println("수량을 입력하세요")
 
             //println("${price} 원입니다.")
@@ -204,7 +205,7 @@ open class Menu1 {
             val price = 20000
 
 
-            println("${name}이 선택되었습니다. | 20000 | 담백한 나가사끼짬뽕")
+            println("${name}이 선택되었습니다. | ₩ 20000 | 담백한 나가사끼짬뽕")
             println("수량을 입력하세요")
 
             //println("${price} 원입니다.")
@@ -223,7 +224,7 @@ open class Menu1 {
             val name = "해물얼큰짬뽕"
             val price = 20000
 
-            println("${name}이 선택되었습니다. | 20000 | 시원한 해물얼큰짬뽕")
+            println("${name}이 선택되었습니다. | ₩ 20000 | 시원한 해물얼큰짬뽕")
             println("수량을 입력하세요")
 
             //println("${price} 원입니다.")
