@@ -12,7 +12,6 @@ open class Menu4 {
             DrinkList().detailList()
             println("5. 카트보기")
             println("0. 뒤로가기")
-
             println("=======================")
 
             print("입력: ")
@@ -97,7 +96,7 @@ open class DrinkList() : List<Any?>() {
         val size = DrinkList().drinkname.size
 
         for (i in 1..size) {
-            println("${i}. ${DrinkList().drinkname[i - 1]} | ${DrinkList().drinkprice[i - 1]} | ${DrinkList().drinkdescription[i - 1]}")
+            println("${i}. ${DrinkList().drinkname[i - 1]} | W ${DrinkList().drinkprice[i - 1]} | ${DrinkList().drinkdescription[i - 1]}")
         }
 
 

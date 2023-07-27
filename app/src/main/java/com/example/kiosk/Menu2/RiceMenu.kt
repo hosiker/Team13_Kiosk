@@ -9,12 +9,14 @@ class RiceMenu() {
 
         while (true) {
             try {
+                println("=======밥류 메뉴판=======")
                 for ((index, MenuIteam) in menu2List.withIndex()) {
                     val menuinfo = MenuIteam.info()
                     println("${index + 1}. ${menuinfo.name} | W ${menuinfo.price} | ${menuinfo.depict}")
                 }
                 println("4. 카트보기\n0. 뒤로가기")
-                print("원하시는 번호를 선택해 주세요    ")
+                println("=======================")
+                print("입력: ")
                 riceSelect = readLine()!!.toInt()
 
                 when (riceSelect) {
@@ -22,7 +24,7 @@ class RiceMenu() {
                         val selectedItem =
                             menu2List[riceSelect - 1]
                         val itemInfo = selectedItem.info()
-                        println("\n${itemInfo.name}을(를) 선택하셨습니다.")
+                        println("\"${itemInfo.name}을(를) 선택하셨습니다.\"")
 
                         val quantity = QuantityUtils.askForQuantity()
                         cart.addToCart(itemInfo.name, itemInfo.price, quantity)

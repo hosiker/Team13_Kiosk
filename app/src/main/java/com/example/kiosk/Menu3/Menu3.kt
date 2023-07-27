@@ -7,7 +7,7 @@ class Menu3() {
     fun dried(menu3List: List<AbstractDry>) {
 
         while (true) {
-            println("[ 마른 안주 ]")
+            println("=====마른 안주 메뉴판=====")
             menu3List.forEachIndexed { index, menuItem ->
                 val menuInfo = menuItem.info()
                 println("${index + 1}. ${menuInfo.name} | W ${menuInfo.price} | ${menuInfo.depict}")
@@ -15,6 +15,7 @@ class Menu3() {
 
             println("5. 카트보기")
             println("0. 뒤로가기")
+            println("=======================")
 
             print("입력: ")
             val inputQuantity = readLine()?.toIntOrNull() //  입력값을 정수로 변환 가능하면 해당 정수값을 반환, 그렇지 않면 null 반환
@@ -24,7 +25,7 @@ class Menu3() {
                     in 1..menu3List.size -> { // 1~menu3item 리스트 크기동안 실행
                         val selectedItem = menu3List[inputQuantity.toInt()-1]  // 선택한 메뉴의 인덱스에 해당하는 메뉴를 가져옴
                         val itemInfo = selectedItem.info()
-                        println("\n${itemInfo.name}을(를) 선택하셨습니다.")
+                        println("\"${itemInfo.name}을(를) 선택하셨습니다.\"")
 
                         val quantity = QuantityUtils.askForQuantity()
                         cart.addToCart(itemInfo.name, itemInfo.price, quantity)
