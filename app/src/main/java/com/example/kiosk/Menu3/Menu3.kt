@@ -1,64 +1,57 @@
 package com.example.kiosk.Menu3
 
-data class DryMenu(val name: String, val price: Int, val description: String)
+import com.example.kiosk.Utils.Kiosk.cart
+import com.example.kiosk.Utils.QuantityUtils
 
-open class Menu3(val cart: Cart) {
-    private val dryList = listOf(
-        DryMenu("튀김쥐포", 3000, "바삭하고 고소해서 한입! 나도 모르게 또 한입!"),
-        DryMenu("새끼먹태", 7000, "골고루 먹고 싶은데 먹태가 먹고 싶다면 ㄱㄱ!"),
-        DryMenu("한치", 8000, "깨끗하게 건조한 1등급 한치, 씹을수록 고소한 맛!"),
-        DryMenu("버터구이오징어입", 7000, "버터를 만나 더 부드럽고 촉촉해진 국민 술안주")
-    )
-    // private val cart = Cart()
-
-    fun dry() {
+class Menu3() {
+    fun dried(menu3List: List<AbstractDry>) {
 
         while (true) {
-            println("[마른 안주]")
-            for ((index, menu) in dryList.withIndex()) {  // withIndex를 사용해서 dryList의 인덱스와 메뉴에 접근할 수 있게 함
-                println("${index + 1}. ${menu.name} | W ${menu.price} | ${menu.description}")
+            println("=====마른 안주 메뉴판=====")
+            menu3List.forEachIndexed { index, menuItem ->
+                val menuInfo = menuItem.info()
+                println("${index + 1}. ${menuInfo.name} | W ${menuInfo.price} | ${menuInfo.depict}")
             }
+
             println("5. 카트보기")
             println("0. 뒤로가기")
+            println("=======================")
 
-            print("- 입력: ")
-            val input = readLine()!!
-            val num = input.toIntOrNull()
+            print("입력: ")
+            val inputQuantity = readLine()?.toIntOrNull() //  입력값을 정수로 변환 가능하면 해당 정수값을 반환, 그렇지 않면 null 반환
 
-            if (num != null) {
-                when (input.toInt()) {
-                    in 1..dryList.size -> {
-                        val pickMenu = dryList[num -1]
-                        // println("$num. ${pickMenu.name} | W ${pickMenu.price} | ${pickMenu.description}") // num == index + 1 (num은 사용자한테 입력받은 값, index+1은 메뉴에 저장된 값)
+            if (inputQuantity != null) {
+                when (inputQuantity) {
+                    in 1..menu3List.size -> { // 1~menu3item 리스트 크기동안 실행
+                        val selectedItem = menu3List[inputQuantity.toInt()-1]  // 선택한 메뉴의 인덱스에 해당하는 메뉴를 가져옴
+                        val itemInfo = selectedItem.info()
+                        println("\"${itemInfo.name}을(를) 선택하셨습니다.\"")
 
-                        print("- 수량을 입력하세요: ")
-                        val quantityInput = readLine()!!.toIntOrNull()
-
-                        if (quantityInput != null && quantityInput > 0) {
-                            cart.addToCart(pickMenu, quantityInput)
-                            println("- ${pickMenu.name} ${quantityInput}개가 카트에 담겼습니다.")
-                        } else {
-                            println("- ※ 올바른 수량을 입력해주세요.")
-                            continue
-                        }
+                        val quantity = QuantityUtils.askForQuantity()
+                        cart.addToCart(itemInfo.name, itemInfo.price, quantity)
+                        println("${itemInfo.name} ${quantity}개를 카트에 담았습니다.\n")
                     }
 
                     5 -> {
-                        cart.displayCart()
+                        cart.viewCart()  // 카드에 담긴 항목을 보여줌
+                        continue
                     }
 
+                    /*6 -> {
+                        cart.total()  // 총합을 선택하면 가격을 말해주고 계산하는걸로 넘어가야 하는걸까?
+                    }*/
+
                     0 -> {
-                        println("- 메인메뉴로 돌아갑니다.")
-                        return
+                        println("메인메뉴로 돌아갑니다.\n")
+                        return  // 0 입력 시 메인메뉴로 뒤로가기
                     }
 
                     else -> {
-                        println("- ※ 잘못된 입력입니다. 메뉴를 확인해주세요.")
+                        println("- ※ 잘못된 입력입니다. 메뉴를 확인해주세요.\n")  // inputQuantity 값이 null(메뉴에 없는 숫자)일 경우 다시 입력하게 설정
                     }
                 }
-            }
-            else {
-                println("※ 숫자를 입력해주세요.")
+            } else {
+                println("※ 숫자를 입력해주세요.\n")  // inputQuantity 값이 null(숫자가 아닌 문자)일 경우 다시 입력하게 설정
             }
         }
     }

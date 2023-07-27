@@ -1,5 +1,6 @@
 package com.example.kiosk.Menu2
 
+import com.example.kiosk.Utils.MenuItem
 abstract class AbstractRice {
-    abstract fun abstractRice(name: String, price: Int) : String
+    abstract fun info() : MenuItem
 }

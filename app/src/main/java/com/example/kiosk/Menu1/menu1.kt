@@ -1,79 +1,51 @@
 package com.example.kiosk.Menu1
 
+import com.example.kiosk.Utils.Kiosk
+import com.example.kiosk.Utils.Kiosk.cart
+import com.example.kiosk.Utils.MenuItem
+import com.example.kiosk.Utils.QuantityUtils
 import java.lang.NumberFormatException
-
-fun main(){ //
-
-
-Menu1().tang()
-
-//var menu2 = Menu1("나가사끼탕 ",  20000, " 해산물과 나가사키의 조화")
-//var menu3 = Menu1("해물얼큰짬뽕탕 ",  20000, " 매콤 얼큰 짬뽕탕")
-//var menu4 = Menu1("김치우동전골 ",  20000, " 김치와 우동의 콤비")
-
-
-//menu1.tang()
-//menu2.tang1()
-//menu3.tang1()
-//menu4.tang1()
-
-}
 
 
 open class Menu1 {
-
-    open fun tang() {
-
+    open fun tang(menu1List: List<abstractTang1>) {
         while (true) {
-            println("1. 뒤로가기")
-            println("[탕 메뉴]")
-            println("2. 어묵탕")
-            println("3. 나가사키탕")
-            println("4. 해물얼큰짬뽕탕")
-            println("5. 김치우동전골")
-
-            var sel1: Int?
-
             try {
-
-                var input: Int? = readLine()?.toInt()
+                println("=======탕류 메뉴판=======")
+                menu1List.forEachIndexed { index, menuItem ->
+                    val menuInfo = menuItem.Info()
+                    println("${index + 1}. ${menuInfo.name} | W ${menuInfo.price} | ${menuInfo.depict}")
+                }
+                println("5. 카트보기")
+                println("0. 뒤로가기")
+                println("=======================")
+                print("입력: ")
+                val input: Int? = readLine()?.toInt()
                 if (input != null) {
-                    sel1 = input.toInt()
-                    when (sel1) {
+                    when (input) {
+                        in 1..menu1List.size -> {
+                            val selItem = menu1List[input - 1]
+                            val itemInfo = selItem.Info()
+                            println("\"${itemInfo.name}을 선택했습니다.\"")
 
-                        2 -> {
-                            println("2번 어묵탕이 선택되었습니다. 가성비끝판왕")
-                            return
-                        }
-
-                        3 -> {
-                            println("3번 나가사끼탕이 선택되었습니다. 존맛존맛 담백한 나가사끼")
-                            return
-                        }
-
-                        4 -> {
-                            println("4번 해물얼큰짬뽕탕이 선택되었습니다. 존맛존맛 얼큰한 해물얼큰짬뽕탕")
-                            return
-                        }
-
-                        5 -> {
-                            println("5번 김치우동전골이 선택되었습니다. 한국인의 맛")
-                            return
+                            val qa = QuantityUtils.askForQuantity()
+                            cart.addToCart(itemInfo.name, itemInfo.price, qa)
+                            println("${itemInfo.name} ${qa}개를 카트에 담았습니다. \n")
                         }
 
                         0 -> {
-                            println("프로그램 종료")
-                            break
-                        }
-                        1 -> {
                             println("뒤로가기 종료")
                             return
                         }
 
+                        5 -> {
+                            println("카트보기")
+                            Kiosk.cart.viewCart()
+                            continue
+                        }
+
                         else -> {
-
                             println("입력이 없습니다. 숫자를 입력해주세요. ")
-
                         }
                     }
                 } else {
@@ -87,53 +59,57 @@ open class Menu1 {
             }
         }
     }
+
+    open class Count(op: Int) {
+        var count: Int = 0
+
+        init {
+            this.count = op
+        }
+        open fun c1() {
+            println("수량 ${count}개 입니다.")
+        }
+    }
+
+
+    abstract class abstractTang1() {
+        abstract fun Info(): MenuItem
+    }
+
+    class omok : abstractTang1() {
+        override fun Info(): MenuItem {
+            val name = "모듬어묵짬뽕"
+            val price = 10000
+            val depict = "소박한 모듬어묵짬뽕"
+            return MenuItem(name, price, depict)
+        }
+    }
+
+    class nagasaki : abstractTang1() {
+        override fun Info(): MenuItem {
+            val name = "나가사끼짬뽕"
+            val price = 20000
+            val depict = "담백한 나가사끼짬뽕"
+            return MenuItem(name, price, depict)
+        }
+    }
+
+    class hamul : abstractTang1() {
+        override fun Info(): MenuItem {
+            val name = "해물얼큰짬뽕"
+            val price = 20000
+            val depict = "시원한 해물얼큰짬뽕"
+            return MenuItem(name, price, depict)
+        }
+    }
+
+    class kimchiodong : abstractTang1() {
+        override fun Info(): MenuItem {
+            val name = "김치우동짬뽕"
+            val price = 15000
+            val depict = "깔끔한 김치우동짬뽕"
+            return MenuItem(name, price, depict)
+        }
+    }
 }
-//
-//    var name: String = ""
-//    var price: Int = 0
-//    var explain: String = ""
-//
-//    constructor(_name: String, _price: Int, _explain: String) {
-//        print("${_name}")
-//        print("${_price}원")
-//        println("${_explain}")
-//
-//        name = _name
-//        price = _price
-//        explain = _explain
 
-
-
-
-
-
-
-//
-//        if (sel1 == 2) {
-//            println("2번 어묵탕이 선택되었습니다. (굿초이스 갓성비)")
-//        } else if (sel1 == 3) {
-//            println("3번 나가사키탕이 선택되었습니다.")
-//        } else if (sel1 == 4) {
-//            println("4번 해물얼큰짬뽕탕이 선택되었습니다.")
-//        } else if (sel1 == 5) {
-//            println("4번 김치우동전골이 선택되었습니다.")
-//        } else if (sel1 == 0) {
-//            println("프로그램 종료")
-//        } else {
-//            println("뒤로가기예정")
-//        }
-//    }
-//}
-
-//    open fun tang2() {
-//
-//    }
-//
-//    open fun tang3() {
-//
-//    }
-//
-//    open fun tang4() {
-//
-//    }
-//}

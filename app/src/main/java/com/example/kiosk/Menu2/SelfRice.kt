@@ -1,12 +1,12 @@
 package com.example.kiosk.Menu2
 
+import com.example.kiosk.Utils.MenuItem
+
 class SelfRice : AbstractRice() {
-    override fun abstractRice(name: String, price: Int): String{
-        val name = "셀프 주먹밥"
+    override fun info(): MenuItem {
+        val name = "셀프주먹밥"
         val price = 3000
-        println("${name} 을 선택하셨습니다.")
-        println("${price}원 입니다.")
-        println("")
-        return name
+        val deict = "나는 탄수화물이 필요하다 내 마음대로 만들어 먹는 주먹밥"
+        return MenuItem (name, price, deict )
     }
 }
