@@ -1,0 +1,16 @@
+Index: app/src/main/java/com/example/kiosk/menu4.kt
+===================================================================
+diff --git a/app/src/main/java/com/example/kiosk/menu4.kt b/app/src/main/java/com/example/kiosk/menu4.kt
+--- a/app/src/main/java/com/example/kiosk/menu4.kt	
++++ b/app/src/main/java/com/example/kiosk/menu4.kt	
+@@ -12,8 +12,8 @@
+             DrinkList()
+             val size = DrinkList().drinkname.size
+ 
+-            for(i in 1..size){
+-                println("${i+1}. ${DrinkList().drinkname[i-1]}")
++            for (i in 1..size) {
++                println("${i + 1}. ${DrinkList().drinkname[i - 1]}")
+             }
+ 
+             val num4: Int = readLine()!!.toInt()

@@ -13,6 +13,11 @@ import com.example.kiosk.Menu3.ButterSquid
 import com.example.kiosk.Menu3.Calamari
 import com.example.kiosk.Menu3.Filefish
 import com.example.kiosk.Menu3.Pollack
+import com.example.kiosk.Menu4.AbstractDrink
+import com.example.kiosk.Menu4.Beer
+import com.example.kiosk.Menu4.Drink
+import com.example.kiosk.Menu4.Menu4
+import com.example.kiosk.Menu4.Soju
 
 import com.example.kiosk.Utils.Kiosk.cart
 
@@ -20,7 +25,8 @@ fun main(){
     // val menu1List: List<> = listOf()
     val menu2List: List<AbstractRice> = listOf(KimchiRice(), SelfRice(), ShrimpRice())
     val menu3List: List<AbstractDry> = listOf(ButterSquid(), Calamari(), Filefish(), Pollack())
-    //val menu4List: List<AbstractDrink> = listOf(Soju(), Beer(), Highball())
+    val menu4List: List<AbstractDrink> = listOf(Soju(), Beer(), Drink())
+
     while(true) {
         println("===술집이름===")
         println("메뉴를 선택해 주세요.")
@@ -54,7 +60,7 @@ fun main(){
             }
 
             4 -> {
-                //MenuFour().drink(menu4List)
+                Menu4().menu4(menu4List)
             }
             5-> {
                 cart.viewCart()  // 카드에 담긴 항목을 보여줌

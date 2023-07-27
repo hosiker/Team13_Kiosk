@@ -1,0 +1,65 @@
+Index: app/src/main/java/com/example/kiosk/Menu3/Menu3.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.kiosk.Menu3\r\n\r\nimport com.example.kiosk.Utils.Cart\r\nimport com.example.kiosk.Utils.MenuItems\r\nimport com.example.kiosk.Utils.MenuItems.menuList\r\nimport com.example.kiosk.Utils.QuantityUtils\r\n\r\nopen class Menu3() {\r\n    fun dry() {\r\n        val menu3Items = MenuItems.menu3Items\r\n        val cart = Cart()\r\n        \r\n        while (true) {\r\n            //println(\"\\n[마른 안주]\")\r\n            println(\"[${menuList[2]}]\")\r\n            for ((index, menuItem) in menu3Items.withIndex()) {  // menu3Items 리스트 내 각 인덱스와 요소를 반복문으로 돌림\r\n                println(\"${index+1}. ${menuItem.name} | W ${menuItem.price} | ${menuItem.depict}\")\r\n            }\r\n            println(\"5. 카트보기\")\r\n            println(\"6. 총 가격 보기\")\r\n            println(\"0. 뒤로가기\")\r\n\r\n            print(\"입력: \")\r\n            val inputQuantity = readLine()?.toIntOrNull() //  입력값을 정수로 변환 가능하면 해당 정수값을 반환, 그렇지 않면 null 반환\r\n\r\n            if (inputQuantity != null) {\r\n                when (inputQuantity) {\r\n                    in 1..menu3Items.size -> { // 1~menu3item 리스트 크기동안 실행\r\n                        val selectedItem = menu3Items[inputQuantity.toInt()-1]  // 선택한 메뉴의 인덱스에 해당하는 메뉴를 가져옴\r\n                        println(\"${inputQuantity}. ${selectedItem.name}을(를) 선택하셨습니다.\")\r\n\r\n                        val quantity = QuantityUtils.askForQuantity()\r\n                        cart.addToCart(selectedItem.name, selectedItem.price, quantity)\r\n                        println(\"${selectedItem.name} ${quantity}개가 카트에 담겼습니다.\")\r\n                    }\r\n\r\n                    5 -> {\r\n                        cart.viewCart()  // 카드에 담긴 항목을 보여줌\r\n                        continue\r\n                    }\r\n\r\n                    6 -> {\r\n                        cart.total()  // 총합을 선택하면 가격을 말해주고 계산하는걸로 넘어가야 하는걸까?\r\n                    }\r\n\r\n                    0 -> {\r\n                        println(\"메인메뉴로 돌아갑니다.\\n\")\r\n                        return  // 0 입력 시 메인메뉴로 뒤로가기\r\n                    }\r\n\r\n                    else -> {\r\n                        println(\"- ※ 잘못된 입력입니다. 메뉴를 확인해주세요.\")  // pick 값이 null(메뉴에 없는 숫자)일 경우 다시 입력하게 설정\r\n                    }\r\n                }\r\n            } else {\r\n                println(\"※ 숫자를 입력해주세요.\")  // pick 값이 null(숫자가 아닌 문자)일 경우 다시 입력하게 설정\r\n            }\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/kiosk/Menu3/Menu3.kt b/app/src/main/java/com/example/kiosk/Menu3/Menu3.kt
+--- a/app/src/main/java/com/example/kiosk/Menu3/Menu3.kt	(revision ddede460456b3bcbc599199ed0091eec9675aeef)
++++ b/app/src/main/java/com/example/kiosk/Menu3/Menu3.kt	(date 1690433430623)
+@@ -1,7 +1,6 @@
+ package com.example.kiosk.Menu3
+ 
+ import com.example.kiosk.Utils.Cart
+-import com.example.kiosk.Utils.MenuItems
+ import com.example.kiosk.Utils.MenuItems.menuList
+ import com.example.kiosk.Utils.QuantityUtils
+ 
+Index: app/src/main/java/com/example/kiosk/ShrimpRice.kt
+===================================================================
+diff --git a/app/src/main/java/com/example/kiosk/ShrimpRice.kt b/app/src/main/java/com/example/kiosk/ShrimpRice.kt
+deleted file mode 100644
+--- a/app/src/main/java/com/example/kiosk/ShrimpRice.kt	(revision ddede460456b3bcbc599199ed0091eec9675aeef)
++++ /dev/null	(revision ddede460456b3bcbc599199ed0091eec9675aeef)
+@@ -1,14 +0,0 @@
+-package com.example.kiosk
+-
+-import com.example.kiosk.Menu2.AbstractRice
+-
+-class ShrimpRice : AbstractRice() {
+-    override fun abstractRice(name: String, price: Int) : String{
+-        val name = "새우볶음밥"
+-        val price = 5000
+-        println("${name}을 선택하셨습니다.")
+-        println("${price}원 입니다")
+-        println("")
+-        return name
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/example/kiosk/Utils/MenuItems.kt
+===================================================================
+diff --git a/app/src/main/java/com/example/kiosk/Utils/MenuItems.kt b/app/src/main/java/com/example/kiosk/Utils/MenuItems.kt
+deleted file mode 100644
+--- a/app/src/main/java/com/example/kiosk/Utils/MenuItems.kt	(revision ddede460456b3bcbc599199ed0091eec9675aeef)
++++ /dev/null	(revision ddede460456b3bcbc599199ed0091eec9675aeef)
+@@ -1,17 +0,0 @@
+-package com.example.kiosk.Utils
+-
+-// 메뉴의 데이터베이스 역할
+-object MenuItems {
+-    val menuList = listOf("탕류", "밥류", "마른 안주", "주류")
+-    val butterSquid = MenuItem("버터오징어구이", 9000, "진~한 버터에 한바탕 뒹군 오징어")
+-    val filefish = MenuItem("튀김쥐포", 3000, "바삭하고 고소해서 한입! 나도 모르게 또 한입!")
+-    val pollack = MenuItem("먹태", 13000, "주당들의 최애안주!! 바삭쫄깃 먹태와 특제 소스가 만났다!!")
+-    val calamari = MenuItem("한치", 8000, "깨끗하게 건조한 1등급 한치, 씹을수록 고소한 맛!")
+-
+-    val soju = MenuItem("소주", 4000, "참이슬, 이제우린, 처음처럼, 진로")
+-    val beer = MenuItem("맥주", 4000, "하이트, 카스, 테라")
+-    val highball = MenuItem("하이볼", 7000, "산토리니, 잭다니엘")
+-
+-    val menu3Items: List<MenuItem> = listOf(butterSquid, filefish, pollack, calamari)
+-    val menu4Items: List<MenuItem> = listOf(soju, beer, highball)
+-}
+\ No newline at end of file
