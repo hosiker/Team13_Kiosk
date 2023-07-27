@@ -7,7 +7,7 @@ import com.example.kiosk.Menu2.RiceMenu
 import com.example.kiosk.Menu2.SelfRice
 import com.example.kiosk.Menu2.ShrimpRice
 
-import com.example.kiosk.Menu3.MenuThree
+import com.example.kiosk.Menu3.Menu3
 import com.example.kiosk.Menu3.AbstractDry
 import com.example.kiosk.Menu3.ButterSquid
 import com.example.kiosk.Menu3.Calamari
@@ -22,7 +22,7 @@ fun main(){
     val menu3List: List<AbstractDry> = listOf(ButterSquid(), Calamari(), Filefish(), Pollack())
     //val menu4List: List<AbstractDrink> = listOf(Soju(), Beer(), Highball())
     while(true) {
-        println("술집이름")
+        println("===술집이름===")
         println("메뉴를 선택해 주세요.")
         println("1.탕류")
         println("2.밥류")
@@ -50,7 +50,7 @@ fun main(){
             }
 
             3 -> {
-                MenuThree().dried(menu3List)
+                Menu3().dried(menu3List)
             }
 
             4 -> {
