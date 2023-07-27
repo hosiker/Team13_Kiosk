@@ -18,9 +18,9 @@ class RiceMenu() {
                 riceSelect = readLine()!!.toInt()
 
                 when (riceSelect) {
-                    in 1..menu2List.size -> { // 1~menu3item 리스트 크기동안 실행
+                    in 1..menu2List.size -> {
                         val selectedItem =
-                            menu2List[riceSelect - 1]  // 선택한 메뉴의 인덱스에 해당하는 메뉴를 가져옴
+                            menu2List[riceSelect - 1]
                         val itemInfo = selectedItem.info()
                         println("\n${itemInfo.name}을(를) 선택하셨습니다.")
 
@@ -30,17 +30,17 @@ class RiceMenu() {
                     }
 
                     4 -> {
-                        cart.viewCart()  // 카드에 담긴 항목을 보여줌
+                        cart.viewCart()
                         continue
                     }
 
                     0 -> {
                         println("메인메뉴로 돌아갑니다.\n")
-                        return  // 0 입력 시 메인메뉴로 뒤로가기
+                        return
                     }
 
                     else -> {
-                        println("- ※ 잘못된 입력입니다. 메뉴를 확인해주세요.\n")  // inputQuantity 값이 null(메뉴에 없는 숫자)일 경우 다시 입력하게 설정
+                        println("- ※ 잘못된 입력입니다. 메뉴를 확인해주세요.\n")
                     }
                 }
             } catch (riceSelect: java.lang.NumberFormatException) {
