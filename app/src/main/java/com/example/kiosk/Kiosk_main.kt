@@ -2,6 +2,7 @@ package com.example.kiosk.Kiosk_mainKt
 
 import com.example.kiosk.Menu3.Cart
 import com.example.kiosk.Menu1.Menu1
+import com.example.kiosk.Menu1.Menu2
 import com.example.kiosk.Menu3.Menu3
 import com.example.kiosk.Menu4.Menu4
 import com.example.kiosk.Menu2.RiceMenu
@@ -26,9 +27,11 @@ fun main(){
             }
 
             1 -> {
-                println("1.탕류 클래스를 불러옵니다.")
-
+                //println("1.탕류 클래스를 불러옵니다.")
+                //Menu3().printMenuList()
                 Menu1().tang()
+
+
             }
 
             2-> {
