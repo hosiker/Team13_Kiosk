@@ -14,7 +14,7 @@ class RiceMenu() {
                     val menuinfo = MenuIteam.abstractRice()
                     println("${index+1}. ${menuinfo.name} | W ${menuinfo.price} | ${menuinfo.deict}")
                 }
-                println("2.김치볶음밥 3.셀프 주먹밥 4.새우 볶음밥 5.밥메뉴선택완료 0.뒤로가기(메뉴판)")
+                println("1.김치볶음밥 2.셀프 주먹밥 3.새우 볶음밥 0.뒤로가기(메뉴판)")
                 print("원하시는 번호를 선택해 주세요    ")
                 riceSelect = readLine()!!.toInt()
             } catch (riceSelect:java.lang.NumberFormatException){
