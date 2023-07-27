@@ -8,10 +8,11 @@ class Menu3() {
 
         while (true) {
             println("[ 마른 안주 ]")
-            for ((index, menuItem) in menu3List.withIndex()) {  // menu3Items 리스트 내 각 인덱스와 요소를 반복문으로 돌림
+            menu3List.forEachIndexed { index, menuItem ->
                 val menuInfo = menuItem.info()
-                println("${index+1}. ${menuInfo.name} | W ${menuInfo.price} | ${menuInfo.depict}")
+                println("${index + 1}. ${menuInfo.name} | W ${menuInfo.price} | ${menuInfo.depict}")
             }
+
             println("5. 카트보기")
             println("0. 뒤로가기")
 
@@ -23,7 +24,6 @@ class Menu3() {
                     in 1..menu3List.size -> { // 1~menu3item 리스트 크기동안 실행
                         val selectedItem = menu3List[inputQuantity.toInt()-1]  // 선택한 메뉴의 인덱스에 해당하는 메뉴를 가져옴
                         val itemInfo = selectedItem.info()
-                        // println("${inputQuantity}. ${itemInfo.name}을(를) 선택하셨습니다.")
                         println("\n${itemInfo.name}을(를) 선택하셨습니다.")
 
                         val quantity = QuantityUtils.askForQuantity()

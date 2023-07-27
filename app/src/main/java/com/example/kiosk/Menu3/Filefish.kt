@@ -10,10 +10,3 @@ class Filefish: AbstractDry() {
         return MenuItem(name, price, depict)
     }
 }
-
-/*
-class Filefish(): AbstractDry() {
-    override fun abstractDry(): MenuItem {
-        return MenuItems.filefish  // object MenuItemise 정의된 cuttlefish 반환
-    }
-}*/

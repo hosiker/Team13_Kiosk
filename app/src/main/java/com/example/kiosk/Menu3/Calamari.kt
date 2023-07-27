@@ -10,9 +10,3 @@ class Calamari: AbstractDry() {
         return MenuItem(name, price, depict)
     }
 }
-/*
-class Calamari: AbstractDry() {
-    override fun abstractDry(): MenuItem {
-        return MenuItems.calamari  // object MenuItems에서 정의된 calamari를 반환
-    }
-}*/
