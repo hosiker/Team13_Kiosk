@@ -5,7 +5,7 @@ class QuantityUtils {
     companion object {
         fun askForQuantity(): Int {
             while (true) {
-                println("수량을 입력해주세요.")
+                print("수량: ")
                 val quantity = readLine()?.toIntOrNull()
                 if (quantity != null && quantity > 0) {
                     return quantity

@@ -30,7 +30,7 @@ class Cart() {
     // 카트 목록 보여주는 함수
     fun viewCart() {
         if (isEmpty()) {
-            println("\n---카트가 비어 있습니다.---")
+            println("---카트가 비어 있습니다.---")
             return  // 비어 있을 때는 항목을 딱히 안봐도 된다고 생각해서 우선 카트에서 뒤로가기가 자동으로 되게 해둠
         } else {
             println("\n===카트 목록===")

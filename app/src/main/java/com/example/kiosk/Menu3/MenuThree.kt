@@ -10,7 +10,7 @@ class MenuThree() {
         val cart = Kiosk.cart
 
         while (true) {
-            println("===마른 안주===")
+            println("[ 마른 안주 ]")
             for ((index, menuItem) in menu3List.withIndex()) {  // menu3Items 리스트 내 각 인덱스와 요소를 반복문으로 돌림
                 val menuInfo = menuItem.info()
                 println("${index+1}. ${menuInfo.name} | W ${menuInfo.price} | ${menuInfo.depict}")
@@ -49,11 +49,11 @@ class MenuThree() {
                     }
 
                     else -> {
-                        println("- ※ 잘못된 입력입니다. 메뉴를 확인해주세요.")  // pick 값이 null(메뉴에 없는 숫자)일 경우 다시 입력하게 설정
+                        println("- ※ 잘못된 입력입니다. 메뉴를 확인해주세요.\n")  // inputQuantity 값이 null(메뉴에 없는 숫자)일 경우 다시 입력하게 설정
                     }
                 }
             } else {
-                println("※ 숫자를 입력해주세요.")  // pick 값이 null(숫자가 아닌 문자)일 경우 다시 입력하게 설정
+                println("※ 숫자를 입력해주세요.\n")  // inputQuantity 값이 null(숫자가 아닌 문자)일 경우 다시 입력하게 설정
             }
         }
     }
